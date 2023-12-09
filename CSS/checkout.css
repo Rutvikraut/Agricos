@@ -16,12 +16,13 @@
     justify-content: center;
 }
 .addtocart-container{
-    margin-top: 80px;
+    margin-top: 50px;
     width: 100%;
     height: 80vh;
     display: grid;
     grid-template-columns: 60% 40%;
     column-gap: 20px;
+    align-items: center;
 }
 .cart-products{
     background-color: #e8e8e8;
@@ -33,9 +34,11 @@
     font-size: 30px;
     margin-bottom: 6px;
 }
-.price-calculation{
-    background-color: black;
+.price-calculation-container{
+    height: 50vh;
+    background-color: rgb(217, 217, 217);
     border-radius: 15px;
+    padding: 40px;
 }
 .cart-item{
     width: 100%;
@@ -59,7 +62,8 @@
     row-gap: 5px;
 }
 .cart-item .cart-item-info h3{
-    font-size: 22px;
+    font-size: 18px;
+    font-weight: 400;
 }
 .cart-item .cart-item-info p{
     font-size: 12px;
@@ -89,4 +93,63 @@
     font-size: 30px;
     text-align: center;
     color: black;
+}
+
+.price-calculation-wrapper{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 80% 20%;
+    row-gap: 10px;
+}
+.price-calculation{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.charges-name{
+    display: grid;
+    grid-template-rows: 80% 20%;
+    align-items: center;
+}
+.charges{
+    list-style: none;
+    row-gap: 10px;
+}
+.charges li p{
+    font-size: 18px;
+}
+.charges-name h3{
+    border-top: 1px solid black;
+    font-size: 24px;
+    font-weight: 500;
+}
+.price-estimation{
+    display: grid;
+    grid-template-rows: 80% 20%;
+    align-items: center;
+}
+.price-estimation .charges p{
+    text-align: right;
+}
+.price-estimation h3{
+    border-top: 1px solid black;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: right;
+}
+.checkout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checkout-btn{
+    padding: 10px 15px;
+    border-radius: .5rem;
+    background: rgb(236, 236, 236);
+    border: .2rem solid rgba(0, 0, 0, .1);
+    font-weight: 500;
+    cursor: pointer;
+}
+.checkout-btn:hover{
+    color: white;
+    background: black;
 }

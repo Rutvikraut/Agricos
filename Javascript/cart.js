@@ -52,7 +52,7 @@ cart.forEach((cartitem)=>{
             <div class="cart-item-info">
                 <h3>${cartitem.productname}</h3>
                 <p>Number of Items : ${cartitem.quantity}</p>
-                <p>Price: $${cartitem.productprice}</p>
+                <p>Price: $${(cartitem.productprice/100).toFixed(2)}</p>
                 <div class="cart-operations">
                     <button class="cart-btn">Update</button>
                     <button class="cart-btn js-delete-btn"
