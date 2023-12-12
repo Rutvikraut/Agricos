@@ -8,19 +8,19 @@ const products=[{
     id:2,
     image:"../images/product2.png",
     productname:"Insecticide Spary",
-    productprice:1050,
+    productprice:2000,
 },
 {
     id:3,
     image:"../images/product3.png",
     productname:"Crop Cover",
-    productprice:1050,
+    productprice:1000,
 },
 {
     id:4,
     image:"../images/product4.png",
     productname:"Herbicide",
-    productprice:1050,
+    productprice:2050,
 },
 {
     id:5,
@@ -30,9 +30,9 @@ const products=[{
 },
 ]
 const productHtml=document.querySelector(".js-box-container")
-let html=''
+let summaryhtml=''
 products.forEach((product)=>{
-    html+=`
+    summaryhtml+=`
             <div class="box">
                 <img src="${product.image}" alt="" class="item-img">
                 <div class="content">
@@ -58,7 +58,7 @@ products.forEach((product)=>{
             </div>
     `
 })
-productHtml.innerHTML=html;
+productHtml.innerHTML=summaryhtml;
 
 const buttons=document.querySelectorAll(".js-add-to-cart")
 

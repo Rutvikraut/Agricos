@@ -38,7 +38,7 @@
             <div class="cart-products">
                 <h2>Cart Items
                 </h2>
-                <div class="addtocart-product-container">
+                <div class="addtocart-product-container js-addtocart-product-container">
                 </div>
             </div>
             <div class="price-calculation-container">
@@ -46,21 +46,21 @@
                     <div class="price-calculation">
                         <div class="charges-name">
                             <ul class="charges">
-                                <li><p>Product Prices</p></li>
-                                <li><p>CGST</p></li>
+                                <li><p>Product Prices (<span id="productquantity">0</span>)</p></li>
                                 <li><p>Delivery Charges</p></li>
                                 <li><p>Discount</p></li>
+                                <li><p>Estimated Tax</p></li>
                             </ul>
-                            <h3>Total</h3>
+                            <h3>Order Total</h3>
                         </div>
                         <div class="price-estimation">
                             <ul class="charges">
-                                <li><p>$50.50</p></li>
-                                <li><p>$8</p></li>
-                                <li><p>$10</p></li>
-                                <li><p>-$5</p></li>
+                                <li><p class="productprice">$50.50</p></li>
+                                <li><p>$<span class="deliverycharges">10</span></p></li>
+                                <li><p>-$<span class="discount">5</span></p></li>
+                                <li><p class="tax">0</p></li>
                             </ul>
-                            <h3>$6</h3>
+                            <h3 class="totalorder">0</h3>
                         </div>
                     </div>
                     <div class="checkout">
@@ -92,6 +92,5 @@
 
 
 </body>
-<script type="module" src="../Javascript/cart.js"></script>
-
+<script src="../Javascript/cart.js"></script>
 </html>

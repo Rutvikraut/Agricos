@@ -15,16 +15,16 @@ function addtocart(productid,quantity,productimage,productname,productprice){
     }else{
         cart.push({productid:productid,quantity:quantity,productimage:productimage,productname:productname,productprice:productprice})
     }
-
     savestorage()
-    
 }
+const productquantity=document.querySelector("#productquantity")
 function updateCartQuantity(){
     let cartQuantity=0;
     cart.forEach((cartitem)=>{
         cartQuantity+=cartitem.quantity
     })
     document.querySelector("#cart-quantity").innerHTML=cartQuantity
+    productquantity.innerHTML=cartQuantity
 }
 
 function removefromcart(productid){
@@ -35,14 +35,14 @@ function removefromcart(productid){
         }
     })
     cart=newcart;
-    console.log(newcart)
     savestorage()
     updateCartQuantity()
+    
 }
 document.addEventListener('DOMContentLoaded',updateCartQuantity())
 
-const showcart=document.querySelector('.addtocart-product-container')
-let showcarthtml=''
+const showcart= document.querySelector('.js-addtocart-product-container');
+let showcarthtml='';
 cart.forEach((cartitem)=>{
     showcarthtml+=`
         <div class="cart-item js-item-container-${cartitem.productid}">
@@ -75,6 +75,7 @@ document.querySelectorAll('.js-delete-btn').forEach((btn)=>{
         const container=document.querySelector(`.js-item-container-${productid}`)
         container.remove();
         checkcart()
+        calculatePrice()
     })
 })
 
@@ -97,3 +98,26 @@ function checkcart(){
 }}
 
 checkcart()
+
+
+let price=document.querySelector('.productprice')
+let tax=document.querySelector('.tax')
+const deliverycharges=document.querySelector('.deliverycharges').innerHTML
+const discount=document.querySelector('.discount').innerHTML
+let totalorder=document.querySelector('.totalorder')
+function calculatePrice(){
+    let productprice=0;
+    cart.forEach((cartitem) => {
+        productprice+=cartitem.quantity*parseFloat((parseInt(cartitem.productprice)/100).toFixed(2))
+        
+    });
+    price.innerHTML=`$${productprice}`
+    let caltax=productprice*0.12
+    tax.innerHTML=`$${caltax.toFixed(2)}`
+
+    let total=0
+    total+=productprice+caltax+parseInt(deliverycharges)-parseInt(discount)
+    console.log(total)
+    totalorder.innerHTML=`$${total.toFixed(2)}`
+}
+calculatePrice()
