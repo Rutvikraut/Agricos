@@ -20,11 +20,15 @@ function addtocart(productid,quantity,productimage,productname,productprice){
 const productquantity=document.querySelector("#productquantity")
 function updateCartQuantity(){
     let cartQuantity=0;
-    cart.forEach((cartitem)=>{
-        cartQuantity+=cartitem.quantity
-    })
+    if (cart.length!=0){
+        cart.forEach((cartitem)=>{
+            cartQuantity+=cartitem.quantity
+        })
+    }
     document.querySelector("#cart-quantity").innerHTML=cartQuantity
-    productquantity.innerHTML=cartQuantity
+    if (cartQuantity!=0){
+        productquantity.innerHTML=cartQuantity
+    }
 }
 
 function removefromcart(productid){
@@ -43,29 +47,29 @@ document.addEventListener('DOMContentLoaded',updateCartQuantity())
 
 const showcart= document.querySelector('.js-addtocart-product-container');
 let showcarthtml='';
-cart.forEach((cartitem)=>{
-    showcarthtml+=`
-        <div class="cart-item js-item-container-${cartitem.productid}">
-            <div class="cart-item-image">
-                <img src="${cartitem.productimage}" alt="">
-            </div>
-            <div class="cart-item-info">
-                <h3>${cartitem.productname}</h3>
-                <p>Number of Items : ${cartitem.quantity}</p>
-                <p>Price: $${(cartitem.productprice/100).toFixed(2)}</p>
-                <div class="cart-operations">
-                    <button class="cart-btn">Update</button>
-                    <button class="cart-btn js-delete-btn"
-                        data-product-id="${cartitem.productid}">Delete</button>
+if (cart.length!=0){
+    cart.forEach((cartitem)=>{
+        showcarthtml+=`
+            <div class="cart-item js-item-container-${cartitem.productid}">
+                <div class="cart-item-image">
+                    <img src="${cartitem.productimage}" alt="">
+                </div>
+                <div class="cart-item-info">
+                    <h3>${cartitem.productname}</h3>
+                    <p>Number of Items : ${cartitem.quantity}</p>
+                    <p>Price: $${(cartitem.productprice/100).toFixed(2)}</p>
+                    <div class="cart-operations">
+                        <button class="cart-btn">Update</button>
+                        <button class="cart-btn js-delete-btn"
+                            data-product-id="${cartitem.productid}">Delete</button>
+                    </div>
                 </div>
             </div>
-        </div>
-                
-    `
-})
-
-
-showcart.innerHTML=showcarthtml
+                    
+        `
+    })
+    showcart.innerHTML=showcarthtml
+}
 
 document.querySelectorAll('.js-delete-btn').forEach((btn)=>{
     btn.addEventListener('click',()=>{
