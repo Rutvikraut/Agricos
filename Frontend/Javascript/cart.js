@@ -5,11 +5,13 @@ function savestorage(){
 }
 function addtocart(productid,quantity,productimage,productname,productprice){
     let matchingItem;
-    cart.forEach((cartitem)=>{
-        if (productid===cartitem.productid){
-            matchingItem=cartitem
-        }
-    })
+    if(cart){
+        cart.forEach((cartitem)=>{
+            if (productid===cartitem.productid){
+                matchingItem=cartitem
+            }
+        })
+    }
     if (matchingItem){
             matchingItem.quantity+=quantity
     }else{
