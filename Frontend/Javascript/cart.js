@@ -19,18 +19,26 @@ function addtocart(productid,quantity,productimage,productname,productprice){
     }
     savestorage()
 }
-const productquantity=document.querySelector("#productquantity")
+
 function updateCartQuantity(){
     let cartQuantity=0;
+    if(!cart){
+        cart=[]
+    }
     if (cart.length!=0){
         cart.forEach((cartitem)=>{
             cartQuantity+=cartitem.quantity
         })
     }
-    document.querySelector("#cart-quantity").innerHTML=cartQuantity
-    if (cartQuantity!=0){
+    const cartQuantityElement = document.querySelector("#cart-quantity");
+    if (cartQuantityElement) {
+        cartQuantityElement.innerHTML = cartQuantity;
+    }
+    const productquantity=document.querySelector("#productquantity")
+    if (productquantity){
         productquantity.innerHTML=cartQuantity
     }
+    
 }
 
 function removefromcart(productid){
@@ -49,7 +57,7 @@ document.addEventListener('DOMContentLoaded',updateCartQuantity())
 
 const showcart= document.querySelector('.js-addtocart-product-container');
 let showcarthtml='';
-if (cart.length!=0){
+if (showcart){if (cart.length!=0){
     cart.forEach((cartitem)=>{
         showcarthtml+=`
             <div class="cart-item js-item-container-${cartitem.productid}">
@@ -71,7 +79,7 @@ if (cart.length!=0){
         `
     })
     showcart.innerHTML=showcarthtml
-}
+}}
 
 document.querySelectorAll('.js-delete-btn').forEach((btn)=>{
     btn.addEventListener('click',()=>{
@@ -86,8 +94,8 @@ document.querySelectorAll('.js-delete-btn').forEach((btn)=>{
 })
 
 function checkcart(){
-    if(cart.length===0){
     var cartcontainer=document.querySelector(".addtocart-container")
+    if (cartcontainer){if(cart.length===0){
     cartcontainer.innerHTML=""
     var emptydiv=document.createElement('div')
     emptydiv.className="emptycart"
@@ -101,15 +109,18 @@ function checkcart(){
 
     emptydiv.appendChild(emptyheading)
     cartcontainer.appendChild(emptydiv)
-}}
+}}}
 
 checkcart()
 
 
-let price=document.querySelector('.productprice')
+let priceElement=document.querySelector('.productprice')
+const price = priceElement ? priceElement : { innerHTML: '' };
 let tax=document.querySelector('.tax')
-const deliverycharges=document.querySelector('.deliverycharges').innerHTML
-const discount=document.querySelector('.discount').innerHTML
+let deliverychargesElement = document.querySelector('.deliverycharges');
+const deliverycharges = deliverychargesElement ? deliverychargesElement.innerHTML : 0;
+let discountElement = document.querySelector('.discount');
+const discount = discountElement ? discountElement.innerHTML : 0;
 let totalorder=document.querySelector('.totalorder')
 function calculatePrice(){
     let productprice=0;
@@ -117,13 +128,19 @@ function calculatePrice(){
         productprice+=cartitem.quantity*parseFloat((parseInt(cartitem.productprice)/100).toFixed(2))
         
     });
-    price.innerHTML=`$${productprice}`
+    if (price) {
+        price.innerHTML = `$${productprice}`;
+    }
     let caltax=productprice*0.12
-    tax.innerHTML=`$${caltax.toFixed(2)}`
+    if (tax) {
+        tax.innerHTML = `$${caltax.toFixed(2)}`;
+    }
 
     let total=0
     total+=productprice+caltax+parseInt(deliverycharges)-parseInt(discount)
     console.log(total)
-    totalorder.innerHTML=`$${total.toFixed(2)}`
+    if (totalorder) {
+        totalorder.innerHTML = `$${total.toFixed(2)}`;
+    }
 }
 calculatePrice()
