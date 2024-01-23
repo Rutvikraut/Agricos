@@ -19,12 +19,12 @@
 <body>
     <header>
         <div id="menu-bar" class="fas fa-bars"></div>
-        <a href="#" class="logo">AGRICOS</a>
+        <a href="../index.html" class="logo">AGRICOS</a>
         <nav class="navbar">
-            <a href="index.html">HOME</a>
-            <a href="cropguide.html">CROP GUIDE</a>
-            <a href="agriproduct.html">AGRI PRODUCTS</a>
-            <a href="contactus.html">CONTACT US</a>
+            <a href="../index.html">HOME</a>
+            <a href="../HTML/cropguide.html">CROP GUIDE</a>
+            <a href="../HTML/agriproduct.html">AGRI PRODUCTS</a>
+            <a href="../HTML/contactus.html">CONTACT US</a>
         </nav>
         <div class="icons">
             <a href="../HTML/checkout.html" class="fas fa-shopping-cart"></a>
@@ -34,43 +34,46 @@
     </header>
 
     <section class="addtocart">
+        <div class="heading">
+            <h1>Cart Items</h1>
+        </div>
         <div class="addtocart-container">
-            <div class="cart-products">
-                <h2>Cart Items
-                </h2>
-                <div class="addtocart-product-container js-addtocart-product-container">
-                </div>
+            <div class="addtocart-product-container js-addtocart-product-container">
             </div>
             <div class="price-calculation-container">
                 <div class="price-calculation-wrapper">
                     <div class="price-calculation">
                         <div class="charges-name">
                             <ul class="charges">
-                                <li><p>Product Prices (<span id="productquantity">0</span>)</p></li>
-                                <li><p>Delivery Charges</p></li>
-                                <li><p>Discount</p></li>
-                                <li><p>Estimated Tax</p></li>
+                                <ul class="column">
+                                    <li><p>Product Prices (<span id="productquantity">0</span>)</p></li>
+                                    <li><p class="productprice">$0.00</p></li>
+                                </ul>
+                                <ul class="column">
+                                    <li><p>Delivery Charges</p></li>
+                                    <li><p>$<span class="deliverycharges">10</span></p></li>
+                                </ul>
+                                <ul class="column">
+                                    <li><p>Discount Amount</p></li>
+                                    <li><p>-$<span class="discount">5</span></p></li>
+                                </ul>
+                                <ul class="column">
+                                    <li><p>Estimated Tax</p></li>
+                                    <li><p class="tax">0</p></li>
+                                </ul>
+                                <ul class="column total-price">
+                                    <li><p>Order Total</p></li>
+                                    <li><p class="totalorder">0</p></li>
+                                </ul>
+                                
                             </ul>
-                            <h3>Order Total</h3>
+                            
                         </div>
-                        <div class="price-estimation">
-                            <ul class="charges">
-                                <li><p class="productprice">$0.00</p></li>
-                                <li><p>$<span class="deliverycharges">10</span></p></li>
-                                <li><p>-$<span class="discount">5</span></p></li>
-                                <li><p class="tax">0</p></li>
-                            </ul>
-                            <h3 class="totalorder">0</h3>
-                        </div>
-                    </div>
-                    <div class="checkout">
-                        <button class="checkout-btn">Checkout</button>
+                        
                     </div>
                 </div>
             </div>
         </div>
-            
-        
     </section>
     <footer>
         <div class="footer-content">

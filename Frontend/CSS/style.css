@@ -176,19 +176,19 @@ header .icons a:hover {
 }
 
 .card1 {
-    background-image: url(images/card1.jpg);
+    background-image: url(../images/card1.jpg);
 }
 
 .card2 {
-    background-image: url(images/card2.jpg);
+    background-image: url(../images/card2.jpg);
 }
 
 .card3 {
-    background-image: url(images/card3.jpg);
+    background-image: url(../images/card3.jpg);
 }
 
 .card4 {
-    background-image: url(images/card4.jpg);
+    background-image: url(../images/card4.jpg);
 }
 
 .card-image h2 {
@@ -550,6 +550,7 @@ form .field input[type="submit"] {
 }
 
 footer {
+    display: block;
     position: absolute;
     left: 0;
     right: 0;

@@ -61,9 +61,7 @@ if (showcart){if (cart.length!=0){
     cart.forEach((cartitem)=>{
         showcarthtml+=`
             <div class="cart-item js-item-container-${cartitem.productid}">
-                <div class="cart-item-image">
-                    <img src="${cartitem.productimage}" alt="">
-                </div>
+                <img src="${cartitem.productimage}" alt="">
                 <div class="cart-item-info">
                     <h3>${cartitem.productname}</h3>
                     <p>Number of Items : ${cartitem.quantity}</p>
@@ -95,20 +93,23 @@ document.querySelectorAll('.js-delete-btn').forEach((btn)=>{
 
 function checkcart(){
     var cartcontainer=document.querySelector(".addtocart-container")
+    const cartheading=document.querySelector(".heading")
     if (cartcontainer){if(cart.length===0){
-    cartcontainer.innerHTML=""
-    var emptydiv=document.createElement('div')
-    emptydiv.className="emptycart"
-    cartcontainer.style.display="flex";
-    cartcontainer.style.alignItems="center"
-    cartcontainer.style.justifyContent = "center";
-    cartcontainer.style.margin='0'
-    var emptyheading=document.createElement('h1')
-    var emptytext=document.createTextNode("Your cart is empty !")
-    emptyheading.appendChild(emptytext)
+        cartheading.remove()
+        cartcontainer.innerHTML=""
+        var emptydiv=document.createElement('div')
+        emptydiv.className="emptycart"
+        cartcontainer.style.height="50vh"
+        cartcontainer.style.margin="0"
+        cartcontainer.style.display="flex";
+        cartcontainer.style.alignItems="center"
+        cartcontainer.style.justifyContent = "center";
+        var emptyheading=document.createElement('h1')
+        var emptytext=document.createTextNode("Your cart is empty !")
+        emptyheading.appendChild(emptytext)
 
-    emptydiv.appendChild(emptyheading)
-    cartcontainer.appendChild(emptydiv)
+        emptydiv.appendChild(emptyheading)
+        cartcontainer.appendChild(emptydiv)
 }}}
 
 checkcart()
