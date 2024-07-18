@@ -1,0 +1,105 @@
+#cropguide{
+    margin-top: 50px;
+}
+.cropguide {
+    position: relative;
+    margin-top: 20px;
+    padding: 40px 0px;
+    background-color: rgb(243, 239, 239);
+}
+
+.title1 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.card {
+    background-color: #fff;
+    width: 270px;
+    height: 500px;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.card-image {
+    background-color: aqua;
+    height: 170px;
+    margin-bottom: 10px;
+    background-size: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.card1 {
+    background-image: url(../images/card1.jpg);
+}
+
+.card2 {
+    background-image: url(../images/card2.jpg);
+}
+
+.card3 {
+    background-image: url(../images/card3.jpg);
+}
+
+.card4 {
+    background-image: url(../images/card4.jpg);
+}
+.card5 {
+    background-image: url(../images/card5.jpg);
+}
+.card6 {
+    background-image: url(../images/card6.jpg);
+}
+.card7 {
+    background-image: url(../images/card7.jpg);
+}
+.card8 {
+    background-image: url(../images/card8.jfif);
+}
+.card9 {
+    background-image: url(../images/card9.jpg);
+}
+.card10 {
+    background-image: url(../images/card10.jpg);
+}
+
+
+.card-image h2 {
+    padding: 10px;
+    padding-top: 180px;
+}
+
+.card-image p {
+    padding: 10px;
+    font-size: 12.5px;
+    text-align: justify;
+}
+
+.card a {
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1em;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, .1);
+    padding: .8em 2em;
+    margin-left: 50px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: .5em;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    font-weight: bolder;
+}
+
+.card a:hover {
+    background: rgb(255, 196, 0);
+    color: #fff;
+}
+
+.card:hover {
+    background-color: rgb(105, 105, 105);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: all 1s ease;
+}

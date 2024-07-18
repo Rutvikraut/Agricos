@@ -1,0 +1,92 @@
+.search-product{
+    width: 50%;
+    height: 30px;
+    margin-bottom: 30px;
+}
+.search-product input{
+    width: 100%;
+    height: 40px;
+    border-radius: 30px;
+    padding: 25px;
+    font-size: 18px;
+}
+.search-product input ::placeholder{
+    font-weight: bold;
+}
+
+.agriproduct{
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.agriproduct .box-container {
+    padding-top: 20px;
+    /* display: flex; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.2em;
+    margin: auto;
+    margin-left: 50px;
+}
+
+.agriproduct .box-container .box {
+    
+    border: .1em solid rgb(17, 17, 17);
+    border-radius: .5em;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    /* flex: 1 1 20rem; */
+    width: 250px;
+}
+
+.agriproduct .heading {
+    text-align: center;
+    /* padding-top: 140px; */
+    padding: 40px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.agriproduct .box-container .box .content {
+    font-size: 12px;
+    padding: 1rem;
+}
+
+.agriproduct .box-container .box img {
+    height: 10rem;
+    transform: rotate(0deg);
+    filter: drop-shadow(0 .5rem 1rem rgba(0, 0, 0, .1));
+    margin: 1rem 2rem;
+}
+
+.agriproduct .box-container .box:hover img {
+    transform: rotate(0deg) scale(1.2);
+}
+
+.agriproduct .box-container .box .icon {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    top: 5rem;
+    left: 1rem;
+}
+
+.agriproduct .box-container .box .content .price span {
+    color: orange;
+    font-size: 1.5rem;
+    text-decoration: line-through;
+
+}
+
+.agriproduct .box-container .box .content .stars {
+    padding-bottom: 1rem;
+}
+
+.agriproduct .box-container .box .content .stars i {
+    font-size: 1.7rem;
+    color: orange;
+}

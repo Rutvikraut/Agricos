@@ -61,10 +61,12 @@ if (showcart){if (cart.length!=0){
     cart.forEach((cartitem)=>{
         showcarthtml+=`
             <div class="cart-item js-item-container-${cartitem.productid}">
-                <img src="${cartitem.productimage}" alt="">
+                <div class="imgdiv">
+                    <img src="${cartitem.productimage}" alt="">
+                </div>
                 <div class="cart-item-info">
                     <h3>${cartitem.productname}</h3>
-                    <p>Number of Items : ${cartitem.quantity}</p>
+                    <p>Quantity : ${cartitem.quantity}</p>
                     <p>Price: $${(cartitem.productprice/100).toFixed(2)}</p>
                     <div class="cart-operations">
                         <button class="cart-btn">Update</button>

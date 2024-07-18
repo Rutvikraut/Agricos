@@ -50,10 +50,35 @@ header .navbar a:hover {
     color: orange;
 }
 
+.nav-right{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.icon-box{
+    display: flex;
+    align-items: center;
+}
+
+.login-btn{
+    text-decoration: none;
+    display: inline-block;
+    background: rgb(242, 242, 242);
+    color: rgb(0, 0, .1);
+    padding: .8em 3em;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: .5em;
+    border: .2rem solid rgba(0, 0, 0, .1);
+    font-weight: bolder;
+}
+
 header .icons a {
     font-size: 2.5rem;
     color: black;
-    margin-left: 1.5rem;
+    /* margin-left: 1.5rem; */
 }
 
 header .icons a:hover {
@@ -87,7 +112,9 @@ header .icons a:hover {
 
 .home .slidecontainer .slide .content1 {
     flex: 1 1 40rem;
-
+}
+.home .slidecontainer .slide .content1 p{
+    text-align: justify;
 }
 
 .home .slidecontainer .slide .image {
@@ -144,118 +171,13 @@ header .icons a:hover {
     overflow: hidden;
 
 }
-#cropguide{
-    margin-top: 50px;
-}
-.cropguide {
-    position: relative;
-    margin-top: 20px;
-    padding: 40px 0px;
-    background-color: rgb(243, 239, 239);
-}
-
-.title1 {
-    text-align: center;
-    font-size: 30px;
-}
-
-.card {
-    background-color: #fff;
-    width: 270px;
-    height: 500px;
-    margin: 10px;
-    border-radius: 15px;
-}
-
-.card-image {
-    background-color: aqua;
-    height: 170px;
-    margin-bottom: 10px;
-    background-size: cover;
-    border-radius: 15px 15px 0 0;
-}
-
-.card1 {
-    background-image: url(../images/card1.jpg);
-}
-
-.card2 {
-    background-image: url(../images/card2.jpg);
-}
-
-.card3 {
-    background-image: url(../images/card3.jpg);
-}
-
-.card4 {
-    background-image: url(../images/card4.jpg);
-}
-
-.card-image h2 {
-    padding: 10px;
-    padding-top: 180px;
-}
-
-.card-image p {
-    padding: 10px;
-    font-size: 12.5px;
-    text-align: justify;
-}
-
-.card a {
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 1em;
-    background: rgb(255, 255, 255);
-    color: rgb(0, 0, .1);
-    padding: .8em 2em;
-    margin-left: 50px;
-    font-size: 15px;
-    text-align: center;
-    cursor: pointer;
-    border-radius: .5em;
-    border: .1rem solid rgba(0, 0, 0, .1);
-    font-weight: bolder;
-}
-
-.card a:hover {
-    background: rgb(255, 196, 0);
-    color: #fff;
-}
-
-.card:hover {
-    background-color: rgb(105, 105, 105);
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    transform: scale(1.03);
-    transition: all 1s ease;
-}
-.agriproduct{
-    padding: 60px;
-}
-.agriproduct .box-container {
-    padding-top: 20px;
+.featured-products{
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.2em;
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-bottom: 40px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-
-.agriproduct .box-container .box {
-    
-    border: .1em solid rgb(17, 17, 17);
-    border-radius: .5em;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    background: #fff;
-    flex: 1 1 20rem;
-    width: 100px;
-}
-
-.agriproduct .heading {
+.featured-products .heading {
     text-align: center;
     /* padding-top: 140px; */
     padding: 40px;
@@ -263,45 +185,81 @@ header .icons a:hover {
     font-size: 25px;
 }
 
-.agriproduct .box-container .box .content {
+.featured-products .box-container {
+    padding-top: 20px;
+    /* display: flex; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.2em;
+    margin: auto;
+    margin-left: 50px;
+}
+
+.featured-products .box-container .box {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    /* flex: 1 1 20rem; */
+}
+
+
+.featured-products .box-container .box .content {
     font-size: 12px;
     padding: 1rem;
 }
 
-.agriproduct .box-container .box img {
-    height: 10rem;
-    transform: rotate(0deg);
-    filter: drop-shadow(0 .5rem 1rem rgba(0, 0, 0, .1));
+.featured-products .box-container .box img {
+    height: 20rem;
     margin: 1rem 2rem;
+    mix-blend-mode: multiply;
 }
-
-.agriproduct .box-container .box:hover img {
-    transform: rotate(0deg) scale(1.2);
-}
-
-.agriproduct .box-container .box .icon {
+.featured-products .box-container .box .icon {
     display: flex;
     flex-flow: column;
     position: absolute;
     top: 5rem;
     left: 1rem;
 }
-
-.agriproduct .box-container .box .content .price span {
+.featured-products .box-container .box .content .price{
+    font-size: 2.5rem;
+}
+.featured-products .box-container .box .content .price span {
     color: orange;
     font-size: 1.5rem;
     text-decoration: line-through;
 
 }
 
-.agriproduct .box-container .box .content .stars {
+.featured-products .box-container .box .content .stars {
     padding-bottom: 1rem;
 }
 
-.agriproduct .box-container .box .content .stars i {
+.featured-products .box-container .box .content .stars i {
     font-size: 1.7rem;
     color: orange;
 }
+
+.featured-products .feature-product-more a{
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1em;
+    background: rgb(236, 236, 236);
+    color: rgb(0, 0, .1);
+    padding: .8em 3em;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: .5em;
+    border: .2rem solid rgba(0, 0, 0, .1);
+    font-weight: bolder;
+}
+.featured-products .feature-product-more a:hover {
+    background: rgb(255, 196, 0);
+    color: #fff;
+}
+
+
 
 .btn {
     text-decoration: none;
@@ -323,81 +281,7 @@ header .icons a:hover {
     color: #fff;
 }
 
-.contact-us {
-    margin: 50px;
-}
-.contact {
-    text-align: center;
-    /* padding-top: 140px; */
-    padding: 40px;
-    font-weight: bold;
-    font-size: 25px;
-}
-.contact-box {
-    padding-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    justify-content: center;
-}
-.contact-box .box{
-    border-radius: 5px;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    width: 50vh;
-}
 
-form {
-    padding: 20px 40px;
-    display: flex;
-    flex-direction: column;
-}
-
-.input-field {
-    width: 100%;
-    height: 40px;
-    margin-top: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: 1px solid #777;
-    border-radius: 14px;
-    outline: none;
-}
-
-.textarea-field {
-    border: 1px solid #777;
-    border-radius: 14px;
-    outline: none;
-    width: 100%;
-    height: 150px;
-    padding-top: 10px;
-    margin-top: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.submit-btn {
-    /* position: rela; */
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 1em;
-    background: rgb(255, 255, 255);
-    color: rgb(0, 0, .1);
-    padding: .8em 3em;
-    font-size: 12px;
-    text-align: center;
-    cursor: pointer;
-    border-radius: .5em;
-    border: .2rem solid rgba(0, 0, 0, .1);
-    font-weight: bolder;
-    /* align-items: center; */
-}
-
-.submit-btn:hover {
-    background: rgb(255, 196, 0);
-    color: #fff;
-}
 
 .sign-up {
     height: 100vh;

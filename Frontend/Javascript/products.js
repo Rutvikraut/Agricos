@@ -1,13 +1,13 @@
 const products=[{
     id:1,
     image:"../images/product1.png",
-    productname:"Spary",
+    productname:"Spray",
     productprice:1050,
 },
 {
     id:2,
     image:"../images/product2.png",
-    productname:"Insecticide Spary",
+    productname:"Insecticide Spray",
     productprice:2000,
 },
 {
@@ -28,50 +28,84 @@ const products=[{
     productname:"Weed Killer",
     productprice:1050,
 },
+{
+    id:6,
+    image:"../images/product6.png",
+    productname:"Self Watering Spikes Plant",
+    productprice:1050,
+},
+{
+    id:7,
+    image:"../images/product7.png",
+    productname:"Klassic Watering Can",
+    productprice:1050,
+},
+{
+    id:8,
+    image:"../images/product8.png",
+    productname:"Kisan Kraft KK-PS5000 Pressure Spray Pump",
+    productprice:1050,
+},
+{
+    id:9,
+    image:"../images/product9.png",
+    productname:"Ugaoo Organic Vermicompost Fertilizer Manure",
+    productprice:1050,
+},
+{
+    id:10,
+    image:"../images/product10.png",
+    productname:"Waste Decomposer 10 Bottles",
+    productprice:1050,
+},
+{
+    id:11,
+    image:"../images/product11.png",
+    productname:"TrustBasket Neem Cake Powder Organic Fertilizer and Pest Repellent for Plants",
+    productprice:1050,
+},
+{
+    id:12,
+    image:"../images/product12.png",
+    productname:"Go Garden Growth Boost Liquid Fertilizer",
+    productprice:1050,
+},
+{
+    id:13,
+    image:"../images/product13.png",
+    productname:"Kisan Paddy Special Liquid Fertilizer",
+    productprice:1050,
+},
+{
+    id:14,
+    image:"../images/product14.png",
+    productname:"Organic Plant Bio Organic Potash",
+    productprice:1050,
+},
+{
+    id:15,
+    image:"../images/product15.png",
+    productname:"COIR GARDEN - Bone Meal Powder for Plants",
+    productprice:1050,
+},
+{
+    id:16,
+    image:"../images/product16.png",
+    productname:"Bloombuddy Growth Booster Fertilizer 1 KG Granules",
+    productprice:1050,
+},
+{
+    id:17,
+    image:"../images/product17.png",
+    productname:"Silicon Fertilizer (3 kg) for All Plant",
+    productprice:1050,
+},
+{
+    id:18,
+    image:"../images/product18.png",
+    productname:"SAPRETAILER Epsom Salt Magnesium Sulphate Fertilizer",
+    productprice:1050,
+},
 ]
-const productHtml=document.querySelector(".js-box-container")
-let summaryhtml=''
-products.forEach((product)=>{
-    summaryhtml+=`
-            <div class="box">
-                <img src="${product.image}" alt="" class="item-img">
-                <div class="content">
-                    <h3>${product.productname}</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <div class="price">$${(product.productprice/100).toFixed(2)} <span>$13.20</span></div>
-                    <div class="quantity">
-                        <span>Quantity : </span>
-                        <input type="number" min="1" max="10" value="1" class="quantityNumber js-quantity-number">
-                        <span>/kg</span>
-                    </div>
-                    <button class="btn js-add-to-cart" data-product-id="${product.id}"
-                    data-product-image="${product.image}"
-                    data-product-name="${product.productname}"
-                    data-product-price="${product.productprice}">Add to Cart</button>
-                </div>
-            </div>
-    `
-})
-productHtml.innerHTML=summaryhtml;
 
-const buttons=document.querySelectorAll(".js-add-to-cart")
-
-buttons.forEach((button)=>{
-    button.addEventListener('click',()=>{
-        const quantity=document.querySelector('.js-quantity-number').value
-        let productid=button.dataset.productId
-        let productimage=button.dataset.productImage
-        let productname=button.dataset.productName
-        let productprice=button.dataset.productPrice
-        addtocart(productid,parseInt(quantity),productimage,productname,productprice);
-        updateCartQuantity()
-
-    })
-    
-})
+export default products;
